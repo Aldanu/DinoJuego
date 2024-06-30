@@ -1,3 +1,6 @@
+# If you are using Rider Editor
+.idea/
+
 # Godot 4+ specific ignores
 .godot/
 
