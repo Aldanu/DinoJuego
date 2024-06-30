@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://oohu6yjd7wbp"]
+
+[ext_resource type="PackedScene" uid="uid://bq2sqb1u1l5ve" path="res://addons/virtual_joystick/test/test.tscn" id="1_cs5ip"]
+
+[node name="InGameUi" type="CanvasLayer"]
+
+[node name="Test" parent="." instance=ExtResource("1_cs5ip")]
