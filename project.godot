@@ -17,7 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Puzzle="*res://Levels/LevelSav/Puzzle.cs"
 Global="*res://Resources/Scripts/Global.cs"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [dotnet]
 
