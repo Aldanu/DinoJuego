@@ -5,18 +5,62 @@
 [node name="MainMenuUi" type="CanvasLayer"]
 script = ExtResource("1_cmknw")
 
-[node name="Button" type="Button" parent="."]
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="Control"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = 219.0
+offset_top = -274.0
+offset_right = 359.0
+offset_bottom = -214.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
 text = "Iniciar Juego"
 
-[connection signal="pressed" from="Button" to="." method="StartGame"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/StartButton"]
+position = Vector2(-506, -294)
+
+[node name="SettingsButton" type="Button" parent="Control"]
+layout_mode = 1
+offset_right = 74.0
+offset_bottom = 31.0
+scale = Vector2(2, 2)
+text = "settings"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/SettingsButton"]
+position = Vector2(-506, -294)
+
+[node name="ExitButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 219.0
+offset_top = 166.0
+offset_right = 359.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+text = "Salir"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/ExitButton"]
+position = Vector2(-506, -294)
+
+[connection signal="pressed" from="Control/StartButton" to="." method="StartGame"]
+[connection signal="pressed" from="Control/SettingsButton" to="." method="StartGame"]
+[connection signal="pressed" from="Control/ExitButton" to="." method="ExitGame"]

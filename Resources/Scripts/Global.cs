@@ -24,6 +24,9 @@ public partial class Global : Node
 		CallDeferred("DeferredGotoScene", path);
 	}
 	
+	public void exitGame(){
+		GetTree().Quit();
+	}
 	public void DeferredGotoScene(string path){
 		// It is now safe to remove the current scene
 		current_scene.Free();
