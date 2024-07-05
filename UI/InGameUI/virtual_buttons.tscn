@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://bc2dqe6vqrwen"]
+
+[ext_resource type="Script" path="res://UI/InGameUI/VirtualButtons.cs" id="1_gt2p4"]
+[ext_resource type="Texture2D" uid="uid://bkvmydfn5saxg" path="res://addons/virtual_joystick/textures/joystick_tip.png" id="2_f4xlk"]
+
+[node name="Virtual Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -308.0
+offset_right = 300.0
+offset_bottom = -8.0
+grow_vertical = 0
+script = ExtResource("1_gt2p4")
+
+[node name="TouchScreenButton1" type="TouchScreenButton" parent="."]
+position = Vector2(23, 181)
+texture_normal = ExtResource("2_f4xlk")
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
+position = Vector2(157, 143)
+texture_normal = ExtResource("2_f4xlk")
+
+[node name="TouchScreenButton3" type="TouchScreenButton" parent="."]
+position = Vector2(22, 40)
+texture_normal = ExtResource("2_f4xlk")
+
+[node name="TouchScreenButton4" type="TouchScreenButton" parent="."]
+position = Vector2(158, 5)
+texture_normal = ExtResource("2_f4xlk")
+
+[connection signal="released" from="TouchScreenButton1" to="." method="FirstAbility"]
+[connection signal="released" from="TouchScreenButton2" to="." method="SecondAbility"]
+[connection signal="released" from="TouchScreenButton3" to="." method="ThirdAbility"]
+[connection signal="released" from="TouchScreenButton4" to="." method="FourthAbility"]
