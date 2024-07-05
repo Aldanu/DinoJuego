@@ -7,5 +7,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="Levels\" />
+    <Folder Include="Resources\Scenes\House\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Resources\Scenes\Player\CameraFollow.cs" />
   </ItemGroup>
 </Project>

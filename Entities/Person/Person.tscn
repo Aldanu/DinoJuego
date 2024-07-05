@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://co0w3p4tds55m"]
+
+[ext_resource type="Texture2D" uid="uid://c1f16aacpuhsh" path="res://icon.svg" id="1_d4xbq"]
+[ext_resource type="Script" path="res://Entities/Person/PersonMovement.cs" id="1_tugej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8qex"]
+size = Vector2(128, 128)
+
+[node name="Person" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_tugej")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+modulate = Color(0.757947, 0, 0.382794, 1)
+self_modulate = Color(0.792873, 0.592496, 0.470506, 1)
+scale = Vector2(-1, -1)
+texture = ExtResource("1_d4xbq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_k8qex")
