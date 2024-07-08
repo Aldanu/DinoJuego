@@ -20,11 +20,18 @@ public partial class Sprite2D : Godot.Sprite2D
 		// Movement using Input functions:
 		moveVector = Vector2.Zero;
 		moveVector = Input.GetVector("ui_left","ui_right","ui_up","ui_down");
-		Position  += (moveVector * (float)speed * (float)delta);
+		Position  += moveVector * ((float)speed * (float)delta);
 		
 		if(Input.IsActionJustPressed("buttonA"))
 		{
 			Print("Button 1");
+
+			var scene = Load<PackedScene>("res://Levels/TestLevel/Grenade.tscn");
+			var instance = scene.Instantiate();
+			AddChild(instance);
+
+			//var grenade = new Grenade(); 
+			//AddChild(grenade);
 		}
 		if(Input.IsActionJustPressed("buttonB"))
 		{
