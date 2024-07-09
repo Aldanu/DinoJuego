@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://boy5pcclavg1f"]
+[gd_scene load_steps=11 format=3 uid="uid://boy5pcclavg1f"]
 
 [ext_resource type="Texture2D" uid="uid://c0adhkngqrnfe" path="res://Resources/Textures/StarterTexture/TX Player.png" id="1_mrkds"]
 [ext_resource type="Texture2D" uid="uid://0uct10mim3c1" path="res://Resources/Textures/StarterTexture/TX Tileset Grass.png" id="2_5l8q7"]
 [ext_resource type="PackedScene" uid="uid://b8jbmt7msdilo" path="res://Entities/Player/Player.tscn" id="3_qhcqf"]
 [ext_resource type="PackedScene" uid="uid://d1rjbtyjbeuav" path="res://Resources/Scenes/House/House.tscn" id="4_qcq6f"]
 [ext_resource type="PackedScene" uid="uid://co0w3p4tds55m" path="res://Entities/Person/Person.tscn" id="5_yu1rx"]
+[ext_resource type="PackedScene" uid="uid://oohu6yjd7wbp" path="res://UI/InGameUI/InGameUI.tscn" id="6_c3l0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rjoet"]
 texture = ExtResource("1_mrkds")
@@ -398,3 +399,5 @@ rotation = 0.218669
 [node name="Person" parent="." instance=ExtResource("5_yu1rx")]
 position = Vector2(-45, -378)
 scale = Vector2(0.3, 0.3)
+
+[node name="InGameUi" parent="." instance=ExtResource("6_c3l0j")]
