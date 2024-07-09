@@ -1,39 +1,60 @@
 using Godot;
 using System;
 
+using static Godot.GD;
+
 public partial class Player : CharacterBody2D
 {
-	[Export] public int Speed = 200;
-
+	[Export] public int speed = 200;
+	private AnimatedSprite2D _animatedSprite;
+	private bool isActing = false;
+	public Vector2 moveVector = Vector2.Zero;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		var _sprite2D = GetNode<Godot.Sprite2D>("Sprite2D");
+		_animatedSprite = _sprite2D.GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		_animatedSprite.Play("playerIdle");
+	}
+	public override void _Process(double delta)
+	{
+		moveVector = Vector2.Zero;
+		moveVector = Input.GetVector("ui_left","ui_right","ui_up","ui_down");
+		AnimateCharacter(moveVector);
+		Position  += moveVector * ((float)speed * (float)delta);
+		
+		if(Input.IsActionJustPressed("buttonA"))
+		{
+			_animatedSprite.Stop();
+			isActing=true;
+			Print("Button 1");
+			_animatedSprite.Play("playerSkillNoViolence");
+			var scene = Load<PackedScene>("res://Levels/TestLevel/Grenade.tscn");
+			var instance = scene.Instantiate();
+			AddChild(instance);
+		}
+		if(Input.IsActionJustPressed("buttonB"))
+		{
+		}
+	}
+	public void OnAnimatedSprite2dAnimationFinished()
+	{
+		isActing = false;
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _PhysicsProcess(double delta)
-	{
-		Vector2 velocity = Vector2.Zero;
-
-		if (Input.IsActionPressed("ui_right"))
-		{
-			velocity.X += 1;
+	private void AnimateCharacter(Vector2 moveVector){
+		if(moveVector.X < 0){
+			_animatedSprite.FlipH = true;
 		}
-		if (Input.IsActionPressed("ui_left"))
-		{
-			velocity.X -= 1;
+		if(moveVector.X > 0){
+			_animatedSprite.FlipH = false;
 		}
-		if (Input.IsActionPressed("ui_down"))
-		{
-			velocity.Y += 1;
+		if(!isActing){
+			if(moveVector != Vector2.Zero ){
+				_animatedSprite.Play("playerRun");
+			}else{
+				_animatedSprite.Play("playerIdle");
+			}
 		}
-		if (Input.IsActionPressed("ui_up"))
-		{
-			velocity.Y -= 1;
-		}
-
-		velocity = velocity.Normalized() * Speed;
-		Velocity = velocity;
-		MoveAndSlide();
 	}
 }
