@@ -181,7 +181,7 @@ public partial class playertcs : CharacterBody2D
 	public void Attack(){
 		String dir = current_dir;
 	
-		if(Input.IsActionPressed("attack")){
+		if(Input.IsActionPressed("buttonA")){
 			// Globalttcs.player_current_attack = true;
 			attack_ip = true;
 			if(dir == "right"){

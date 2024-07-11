@@ -23,6 +23,7 @@ public partial class Grenade : Node2D
 		// }
 		// area2D= GetChild<Area2D>(0);
 		// Explode();
+		
 	}
 
 	// private void Explode(){

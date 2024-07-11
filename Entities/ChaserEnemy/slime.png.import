@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc3oy2uigm2ft"
-path="res://.godot/imported/playerIdle.jpeg-e876ee420f05d0f22e0c5e927d9e9abb.ctex"
+uid="uid://bwbe462nx28sv"
+path="res://.godot/imported/slime.png-65373f0c27d53d56a141f712342e7a4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Player/playerIdle.jpeg"
-dest_files=["res://.godot/imported/playerIdle.jpeg-e876ee420f05d0f22e0c5e927d9e9abb.ctex"]
+source_file="res://Entities/ChaserEnemy/slime.png"
+dest_files=["res://.godot/imported/slime.png-65373f0c27d53d56a141f712342e7a4a.ctex"]
 
 [params]
 

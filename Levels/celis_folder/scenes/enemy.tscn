@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dyvi2bn3g3vvp"]
 
-[ext_resource type="Script" path="res://script/enemytcs.cs" id="1_0fbfh"]
-[ext_resource type="Texture2D" uid="uid://pdq0rdvx30tq" path="res://art/characters/slime.png" id="1_i7abi"]
+[ext_resource type="Script" path="res://Levels/celis_folder/script/enemytcs.cs" id="1_0fbfh"]
+[ext_resource type="Texture2D" uid="uid://pdq0rdvx30tq" path="res://Levels/celis_folder/art/characters/slime.png" id="1_i7abi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oon7i"]
 atlas = ExtResource("1_i7abi")
