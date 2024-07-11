@@ -1,4 +1,5 @@
 using Godot;
+using Microsoft.VisualBasic;
 using System;
 
 using static Godot.GD;
@@ -9,7 +10,11 @@ public partial class Player : CharacterBody2D
 	private AnimatedSprite2D _animatedSprite;
 	private bool isActing = false;
 	public Vector2 moveVector = Vector2.Zero;
-	// Called when the node enters the scene tree for the first time.
+	
+	public bool enemyInattackRange = false;
+	public bool enemyAttackCooldown = true;
+	public bool attackIp = false;
+
 	public override void _Ready()
 	{
 		var _sprite2D = GetNode<Godot.Sprite2D>("Sprite2D");
@@ -21,8 +26,18 @@ public partial class Player : CharacterBody2D
 		moveVector = Vector2.Zero;
 		moveVector = Input.GetVector("ui_left","ui_right","ui_up","ui_down");
 		AnimateCharacter(moveVector);
+		Interaction();
+		EnemyAttack();
 		Position  += moveVector * ((float)speed * (float)delta);
 		
+		
+	}
+	public void OnAnimatedSprite2dAnimationFinished()
+	{
+		isActing = false;
+	}
+
+	private void Interaction(){
 		if(Input.IsActionJustPressed("buttonA"))
 		{
 			_animatedSprite.Stop();
@@ -31,15 +46,12 @@ public partial class Player : CharacterBody2D
 			_animatedSprite.Play("playerSkillNoViolence");
 			var scene = Load<PackedScene>("res://Levels/TestLevel/Grenade.tscn");
 			var instance = scene.Instantiate();
+			GetNode<Timer>("DealAttackTimer").Start();
 			AddChild(instance);
 		}
 		if(Input.IsActionJustPressed("buttonB"))
 		{
 		}
-	}
-	public void OnAnimatedSprite2dAnimationFinished()
-	{
-		isActing = false;
 	}
 
 	private void AnimateCharacter(Vector2 moveVector){
@@ -55,6 +67,41 @@ public partial class Player : CharacterBody2D
 			}else{
 				_animatedSprite.Play("playerIdle");
 			}
+		}
+	}
+
+	public void EnemyAttack(){
+		if(enemyInattackRange && enemyAttackCooldown == true) {
+			enemyAttackCooldown = false;
+			GetNode<Timer>("AttackCooldown").Start();
+		}	
+	}
+		private void OnDealAttackTimerTimeout()
+	{
+		GetNode<Timer>("DealAttackTimer").Stop();
+		// Globalttcs.player_current_attack = false;
+		attackIp = false;
+	}
+
+
+	private void OnAttackCooldownTimeout()
+	{
+		enemyAttackCooldown = true;
+	}
+
+
+	private void OnPlayerHitboxBodyEntered(Node2D body)
+	{
+		if(body.HasMethod("enemy")){
+			enemyInattackRange = true;
+		}
+	}
+
+
+	private void OnPlayerHitboxBodyExited(Node2D body)
+	{
+		if(body.HasMethod("enemy")){
+			enemyInattackRange = false;			
 		}
 	}
 }

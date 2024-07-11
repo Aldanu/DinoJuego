@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://oohu6yjd7wbp" path="res://UI/InGameUI/InGameUI.tscn" id="1_5mgel"]
 [ext_resource type="PackedScene" uid="uid://b8jbmt7msdilo" path="res://Entities/Player/Player.tscn" id="2_ty4hi"]
-[ext_resource type="PackedScene" uid="uid://bqwd33yey6ngx" path="res://Entities/Enemy/Enemy.tscn" id="3_8mxj8"]
+[ext_resource type="PackedScene" uid="uid://bqwd33yey6ngx" path="res://Entities/ViolentEnemy/Enemy.tscn" id="3_8mxj8"]
 
 [node name="TestLevel" type="Node2D"]
 

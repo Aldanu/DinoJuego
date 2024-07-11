@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsg1jxr1c3g7m"
-path="res://.godot/imported/rock_in_water-sheet.png-9f02fc65ca76f55bba94ddad24f42368.ctex"
+path="res://.godot/imported/rock_in_water-sheet.png-7f9324bf8875bfe66671aef60e76b0de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/objects/rock_in_water-sheet.png"
-dest_files=["res://.godot/imported/rock_in_water-sheet.png-9f02fc65ca76f55bba94ddad24f42368.ctex"]
+source_file="res://Levels/celis_folder/art/objects/rock_in_water-sheet.png"
+dest_files=["res://.godot/imported/rock_in_water-sheet.png-7f9324bf8875bfe66671aef60e76b0de.ctex"]
 
 [params]
 

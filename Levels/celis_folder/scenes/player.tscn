@@ -1,7 +1,7 @@
 [gd_scene load_steps=57 format=3 uid="uid://c7ur1s4ulpqaf"]
 
-[ext_resource type="Script" path="res://script/playertcs.cs" id="1_fae0u"]
-[ext_resource type="Texture2D" uid="uid://0xxmfwbh008" path="res://art/characters/player.png" id="1_kjlbe"]
+[ext_resource type="Script" path="res://Levels/celis_folder/script/playertcs.cs" id="1_fae0u"]
+[ext_resource type="Texture2D" uid="uid://0xxmfwbh008" path="res://Levels/celis_folder/art/characters/player.png" id="1_kjlbe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q7p5b"]
 atlas = ExtResource("1_kjlbe")
