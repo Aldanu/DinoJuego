@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bj0mqqcfy72ts"]
+
+[ext_resource type="Script" path="res://Levels/TestLevel/Grenade.cs" id="1_nc27r"]
+[ext_resource type="Texture2D" uid="uid://c1f16aacpuhsh" path="res://icon.svg" id="2_ftkiy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_36u7t"]
+radius = 41.0122
+
+[node name="Grenade" type="Node2D"]
+script = ExtResource("1_nc27r")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+modulate = Color(0.0627451, 0.741176, 0.788235, 1)
+shape = SubResource("CircleShape2D_36u7t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_ftkiy")
+
+[connection signal="area_entered" from="Area2D" to="." method="On2dAreaEntered"]
