@@ -130,12 +130,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mwxt3"]
-size = Vector2(126, 128)
+size = Vector2(126, 127.333)
 
 [node name="Main" type="Node2D"]
 position = Vector2(1, 1)
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("1_rpl54")
 
@@ -150,6 +150,7 @@ frame = 5
 frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, 0.333335)
 shape = SubResource("RectangleShape2D_mwxt3")
 
 [node name="AttackCooldown" type="Timer" parent="Player"]
