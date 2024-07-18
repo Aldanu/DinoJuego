@@ -1,21 +1,32 @@
-[gd_scene load_steps=4 format=3 uid="uid://co0w3p4tds55m"]
+[gd_scene load_steps=5 format=3 uid="uid://co0w3p4tds55m"]
 
 [ext_resource type="Texture2D" uid="uid://c1f16aacpuhsh" path="res://icon.svg" id="1_d4xbq"]
-[ext_resource type="Script" path="res://Entities/Person/PersonMovement.cs" id="1_tugej"]
+[ext_resource type="Script" path="res://Entities/Person/Person.cs" id="1_l7mn2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8qex"]
 size = Vector2(128, 128)
 
-[node name="Person" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_xpits"]
+radius = 31.1448
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_tugej")
+[node name="Person" type="CharacterBody2D"]
+script = ExtResource("1_l7mn2")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-modulate = Color(0.757947, 0, 0.382794, 1)
-self_modulate = Color(0.792873, 0.592496, 0.470506, 1)
-scale = Vector2(-1, -1)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.572543, 0.354132, 0.24501, 1)
+self_modulate = Color(0.766298, 0.496054, 0.996373, 1)
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_d4xbq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.3, 0.3)
 shape = SubResource("RectangleShape2D_k8qex")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xpits")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
