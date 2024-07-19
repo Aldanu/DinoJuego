@@ -23,15 +23,22 @@ public partial class Player : CharacterBody2D
 	}
 	public override void _Process(double delta)
 	{
-		moveVector = Vector2.Zero;
-		moveVector = Input.GetVector("ui_left","ui_right","ui_up","ui_down");
 		AnimateCharacter(moveVector);
 		Interaction();
 		EnemyAttack();
-		Position  += moveVector * ((float)speed * (float)delta);
-		
-		
 	}
+	
+	public override void _PhysicsProcess(double delta)
+	{
+		GetInput();
+		MoveAndSlide();
+	}
+	
+	private void GetInput(){
+		moveVector = Input.GetVector("ui_left","ui_right","ui_up","ui_down");
+		Velocity = moveVector * (float)speed;
+	}
+	
 	public void OnAnimatedSprite2dAnimationFinished()
 	{
 		isActing = false;
