@@ -19,10 +19,10 @@ public partial class LevelMenu : MarginContainer
 			foreach(Level box in grid.GetChildren()){
 				var id = i + 1;
 				box.SetLevel(id, world+1);
-				if(id % 2 == 0){
-					box.SetLocked(false);
-				}else{
+				if(id > 1){
 					box.SetLocked(true);
+				}else{
+					box.SetLocked(false);
 				}
 				i++;
 			}

@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://e84webc7nd74"]
+[gd_scene load_steps=4 format=3 uid="uid://c8up34lgar3aq"]
 
 [ext_resource type="Script" path="res://Levels/LevelSelector/LevelMenu.cs" id="1_eerra"]
-[ext_resource type="PackedScene" uid="uid://bxwjqji5pu3vx" path="res://Levels/LevelSelector/LevelGrid.tscn" id="2_dr24p"]
+[ext_resource type="PackedScene" path="res://Levels/LevelSelector/LevelGrid.tscn" id="2_dr24p"]
 [ext_resource type="Texture2D" uid="uid://cfgch0wohpn6r" path="res://Levels/LevelSelector/SelectLevelboard.png" id="2_hs6pg"]
 
 [node name="LevelMenu" type="MarginContainer"]

@@ -43,6 +43,8 @@ public partial class Level :  Godot.PanelContainer
 		if (@event is InputEventScreenTouch eventKey){
 			if (eventKey.Pressed){
 				Print("Clicked level " + world + " - " + levelId);
+				Print($"res://Levels/World{world}/Level{levelId}" + "Main.tscn");
+				Global.Instance.goto_scene($"res://Levels/World{world}/Level{levelId}/" + "Main.tscn");
 			}
 		}
 	}

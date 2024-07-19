@@ -1,9 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgwnjgajl2b88"]
+[gd_scene load_steps=4 format=3 uid="uid://bgwnjgajl2b88"]
 
 [ext_resource type="Script" path="res://Levels/LevelSelector/LevelSelectorUI.cs" id="1_vuhle"]
-[ext_resource type="PackedScene" uid="uid://e84webc7nd74" path="res://Levels/LevelSelector/LevelMenu.tscn" id="2_m8hkb"]
+[ext_resource type="PackedScene" uid="uid://c8up34lgar3aq" path="res://Levels/LevelSelector/LevelMenu.tscn" id="2_m8hkb"]
+[ext_resource type="Texture2D" uid="uid://cihy8yty5ub8x" path="res://Levels/LevelSelector/testBG.png" id="2_qxn1k"]
 
 [node name="LevelSelectorUi" type="CanvasLayer"]
 script = ExtResource("1_vuhle")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qxn1k")
 
 [node name="LevelMenu" parent="." instance=ExtResource("2_m8hkb")]
