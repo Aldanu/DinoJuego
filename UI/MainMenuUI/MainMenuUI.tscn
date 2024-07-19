@@ -27,7 +27,7 @@ offset_bottom = -214.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-text = "Iniciar Juego"
+text = "Jugar"
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="Control/StartButton"]
 position = Vector2(-506, -294)
