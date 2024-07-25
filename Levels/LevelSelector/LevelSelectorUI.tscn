@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgwnjgajl2b88"]
+
+[ext_resource type="Script" path="res://Levels/LevelSelector/LevelSelectorUI.cs" id="1_vuhle"]
+
+[node name="LevelSelectorUi" type="CanvasLayer"]
+script = ExtResource("1_vuhle")
