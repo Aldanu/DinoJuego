@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Levels/LevelSelector/LevelSelectorUI.cs" id="1_vuhle"]
 [ext_resource type="PackedScene" uid="uid://c8up34lgar3aq" path="res://Levels/LevelSelector/LevelMenu.tscn" id="2_m8hkb"]
-[ext_resource type="Texture2D" uid="uid://cihy8yty5ub8x" path="res://Levels/LevelSelector/testBG.png" id="2_qxn1k"]
+[ext_resource type="Texture2D" uid="uid://cmc6heiicw0ju" path="res://Levels/LevelSelector/MenuLaPaz.png" id="2_pmpuw"]
 
 [node name="LevelSelectorUi" type="CanvasLayer"]
 script = ExtResource("1_vuhle")
@@ -13,6 +13,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_qxn1k")
+texture = ExtResource("2_pmpuw")
 
 [node name="LevelMenu" parent="." instance=ExtResource("2_m8hkb")]

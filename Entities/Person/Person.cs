@@ -53,4 +53,8 @@ public partial class Person : CharacterBody2D
 			dialogLabel.Visible = false;
 		}
 	}
+	
+	public void DoSteal(){
+		Print("Stealed :(");
+	}
 }

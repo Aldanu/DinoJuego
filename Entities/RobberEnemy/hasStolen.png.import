@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cihy8yty5ub8x"
-path="res://.godot/imported/testBG.png-0c3a040436241158be50651441ee1641.ctex"
+uid="uid://en3ioiwk251p"
+path="res://.godot/imported/hasStolen.png-a96c89f76335e729ed3030d4dd71bb5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/LevelSelector/testBG.png"
-dest_files=["res://.godot/imported/testBG.png-0c3a040436241158be50651441ee1641.ctex"]
+source_file="res://Entities/RobberEnemy/hasStolen.png"
+dest_files=["res://.godot/imported/hasStolen.png-a96c89f76335e729ed3030d4dd71bb5a.ctex"]
 
 [params]
 

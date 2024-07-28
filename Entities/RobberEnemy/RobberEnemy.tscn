@@ -1,3 +1,89 @@
-[gd_scene format=3 uid="uid://bybitwa883kv6"]
+[gd_scene load_steps=13 format=3 uid="uid://bybitwa883kv6"]
+
+[ext_resource type="Script" path="res://Entities/RobberEnemy/RobberEnemy.cs" id="1_04ho8"]
+[ext_resource type="Texture2D" uid="uid://en3ioiwk251p" path="res://Entities/RobberEnemy/hasStolen.png" id="3_cmpb6"]
+[ext_resource type="Texture2D" uid="uid://c6i58qlthseub" path="res://Entities/RobberEnemy/RobberEnemyRun.png" id="4_ot67l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3uft"]
+atlas = ExtResource("3_cmpb6")
+region = Rect2(0, 0, 126, 124)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mygkq"]
+atlas = ExtResource("4_ot67l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6cxr"]
+atlas = ExtResource("4_ot67l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kddrq"]
+atlas = ExtResource("4_ot67l")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7g83k"]
+atlas = ExtResource("4_ot67l")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwqmq"]
+atlas = ExtResource("4_ot67l")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4km3"]
+atlas = ExtResource("4_ot67l")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edne6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3uft")
+}],
+"loop": true,
+"name": &"BeforeSteal",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mygkq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6cxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kddrq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7g83k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwqmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4km3")
+}],
+"loop": true,
+"name": &"RobberEnemyRun",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hoavu"]
+radius = 25.0799
 
 [node name="RobberEnemy" type="Node2D"]
+script = ExtResource("1_04ho8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.225, 0.225)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprite2D"]
+scale = Vector2(4.72222, 4.72222)
+sprite_frames = SubResource("SpriteFrames_edne6")
+animation = &"RobberEnemyRun"
+frame_progress = 0.243617
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_hoavu")
+
+[connection signal="area_entered" from="Area2D" to="." method="OnArea2dAreaEntered"]

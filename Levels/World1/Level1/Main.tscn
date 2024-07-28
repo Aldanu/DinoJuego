@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c4uk8e6jo0wv6"]
+[gd_scene load_steps=23 format=3 uid="uid://c4uk8e6jo0wv6"]
 
 [ext_resource type="Texture2D" uid="uid://cf3oru1kgejfp" path="res://Resources/Textures/StarterTexture/TX Tileset Wall.png" id="1_f48br"]
 [ext_resource type="Texture2D" uid="uid://bbrlsqmtxc4u7" path="res://Resources/Textures/StarterTexture/TX Props.png" id="2_eplb2"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://d4lasvcyr75ib" path="res://Resources/Scenes/PathFollows/SideXPath.tscn" id="9_tvjx2"]
 [ext_resource type="PackedScene" uid="uid://b8jbmt7msdilo" path="res://Entities/Player/Player.tscn" id="10_s4fg6"]
 [ext_resource type="PackedScene" uid="uid://oohu6yjd7wbp" path="res://UI/InGameUI/InGameUI.tscn" id="11_legwa"]
+[ext_resource type="PackedScene" uid="uid://bybitwa883kv6" path="res://Entities/RobberEnemy/RobberEnemy.tscn" id="12_fcm3r"]
+[ext_resource type="PackedScene" uid="uid://p3njkw4gm5wo" path="res://Resources/Scenes/CrossPath/CrossPath.tscn" id="13_0gvm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ix6h5"]
 texture = ExtResource("1_f48br")
@@ -5815,8 +5817,11 @@ layer_4/tile_data = PackedInt32Array(-1441814, 1179651, 4, -1376278, 1179651, 5,
 [node name="SideXPath" parent="." instance=ExtResource("9_tvjx2")]
 position = Vector2(-1155, -409)
 
+[node name="SideXPath5" parent="." instance=ExtResource("9_tvjx2")]
+position = Vector2(156, -410)
+
 [node name="SideXPath2" parent="." instance=ExtResource("9_tvjx2")]
-position = Vector2(439, -407)
+position = Vector2(1109, -722)
 
 [node name="SideXPath3" parent="." instance=ExtResource("9_tvjx2")]
 position = Vector2(443, 1177)
@@ -5826,6 +5831,107 @@ position = Vector2(-1149, 1179)
 
 [node name="Player" parent="." instance=ExtResource("10_s4fg6")]
 z_index = 3
-position = Vector2(42, -60)
+position = Vector2(32, -317)
 
 [node name="InGameUi" parent="." instance=ExtResource("11_legwa")]
+
+[node name="RobberEnemy" parent="." instance=ExtResource("12_fcm3r")]
+position = Vector2(11, -404)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="CrossPath" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(-1159, -1160)
+right = true
+down = true
+
+[node name="CrossPath2" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(-408, -1162)
+left = true
+right = true
+down = true
+
+[node name="CrossPath3" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(425, -1161)
+left = true
+right = true
+down = true
+
+[node name="CrossPath4" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(1178, -1163)
+left = true
+down = true
+
+[node name="CrossPath5" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(-1161, -413)
+right = true
+up = true
+down = true
+
+[node name="CrossPath6" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(-405, -408)
+left = true
+right = true
+up = true
+down = true
+
+[node name="CrossPath7" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(431, -405)
+left = true
+right = true
+up = true
+down = true
+
+[node name="CrossPath8" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(1184, -402)
+left = true
+up = true
+down = true
+
+[node name="CrossPath9" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(-1160, 431)
+right = true
+up = true
+down = true
+
+[node name="CrossPath10" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(-410, 431)
+left = true
+right = true
+up = true
+down = true
+
+[node name="CrossPath11" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(434, 428)
+left = true
+right = true
+up = true
+down = true
+
+[node name="CrossPath12" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(1182, 428)
+left = true
+up = true
+down = true
+
+[node name="CrossPath13" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(-1159, 1176)
+right = true
+up = true
+
+[node name="CrossPath14" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(-417, 1173)
+left = true
+right = true
+up = true
+
+[node name="CrossPath15" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(429, 1176)
+left = true
+right = true
+up = true
+
+[node name="CrossPath16" parent="Node" instance=ExtResource("13_0gvm8")]
+position = Vector2(1177, 1176)
+left = true
+up = true
