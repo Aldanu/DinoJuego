@@ -15,25 +15,25 @@ public partial class VirtualButtons : Control
 
 	public void FirstAbility()
 	{
-			Input.ActionPress(ButtonA);
-			Input.ActionRelease(ButtonA);
+		Input.ActionPress(ButtonA);
+		Input.ActionRelease(ButtonA);
 	}
 
 	public void SecondAbility()
 	{
-			Input.ActionRelease(ButtonB);
-			Input.ActionPress(ButtonB);
+		Input.ActionRelease(ButtonB);
+		Input.ActionPress(ButtonB);
 	}
 
 	public void ThirdAbility()
 	{
-			Input.ActionRelease(action_up);
-			Input.ActionPress(action_down, output.Y);
+		Input.ActionRelease(action_up);
+		Input.ActionPress(action_down, output.Y);
 	}
 
 	public void FourthAbility()
 	{
-			Input.ActionRelease(action_down);
-			Input.ActionPress(action_up, -output.Y);
+		Input.ActionRelease(action_down);
+		Input.ActionPress(action_up, -output.Y);
 	}
 }

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxwjqji5pu3vx"]
 
-[ext_resource type="PackedScene" uid="uid://b642yluakmh4f" path="res://Levels/LevelSelector/Level.tscn" id="1_7br8m"]
+[ext_resource type="PackedScene" uid="uid://do16yh8vynvtr" path="res://Levels/LevelSelector/Level.tscn" id="1_7br8m"]
 
 [node name="LevelGrid" type="GridContainer"]
 anchors_preset = 8
